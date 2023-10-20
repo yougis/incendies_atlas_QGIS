@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dataplotly>
+<Option type="Map">
+ <Option type="Map" name="dynamic_properties">
+  <Option type="QString" value="" name="name"/>
+  <Option type="Map" name="properties">
+   <Option type="Map" name="filter">
+    <Option type="bool" value="true" name="active"/>
+    <Option type="QString" value="@atlas_pagename = replace(&quot;nom_ok&quot;,'_', ' ') and  &quot;theme&quot; = 'foncier' and  &quot;brule&quot; = 'non'" name="expression"/>
+    <Option type="int" value="3" name="type"/>
+   </Option>
+   <Option type="Map" name="stroke_width">
+    <Option type="bool" value="false" name="active"/>
+    <Option type="QString" value="" name="expression"/>
+    <Option type="Map" name="transformer">
+     <Option type="Map" name="d">
+      <Option type="double" value="1" name="exponent"/>
+      <Option type="double" value="10" name="maxOutput"/>
+      <Option type="double" value="0" name="maxValue"/>
+      <Option type="double" value="1" name="minOutput"/>
+      <Option type="double" value="0" name="minValue"/>
+      <Option type="double" value="0" name="nullOutput"/>
+     </Option>
+     <Option type="int" value="0" name="t"/>
+    </Option>
+    <Option type="int" value="3" name="type"/>
+   </Option>
+   <Option type="Map" name="x_title">
+    <Option type="bool" value="false" name="active"/>
+    <Option type="int" value="1" name="type"/>
+    <Option type="QString" value="" name="val"/>
+   </Option>
+  </Option>
+  <Option type="QString" value="collection" name="type"/>
+ </Option>
+ <Option type="Map" name="plot_layout">
+  <Option type="QString" value="" name="additional_info_expression"/>
+  <Option type="QString" value="stack" name="bar_mode"/>
+  <Option type="double" value="0" name="bargaps"/>
+  <Option type="bool" value="false" name="bins_check"/>
+  <Option type="QString" value="#bdbfc0" name="gridcolor"/>
+  <Option type="bool" value="false" name="legend"/>
+  <Option type="QString" value="v" name="legend_orientation"/>
+  <Option type="invalid" name="legend_title"/>
+  <Option type="Map" name="polar">
+   <Option type="Map" name="angularaxis">
+    <Option type="QString" value="clockwise" name="direction"/>
+   </Option>
+  </Option>
+  <Option type="Map" name="range_slider">
+   <Option type="int" value="1" name="borderwidth"/>
+   <Option type="bool" value="false" name="visible"/>
+  </Option>
+  <Option type="QString" value="" name="title"/>
+  <Option type="invalid" name="x_inv"/>
+  <Option type="invalid" name="x_max"/>
+  <Option type="invalid" name="x_min"/>
+  <Option type="QString" value="" name="x_title"/>
+  <Option type="QString" value="linear" name="x_type"/>
+  <Option type="invalid" name="xaxis"/>
+  <Option type="invalid" name="y_inv"/>
+  <Option type="invalid" name="y_max"/>
+  <Option type="invalid" name="y_min"/>
+  <Option type="QString" value="" name="y_title"/>
+  <Option type="QString" value="linear" name="y_type"/>
+  <Option type="QString" value="" name="z_title"/>
+ </Option>
+ <Option type="Map" name="plot_properties">
+  <Option type="invalid" name="additional_hover_text"/>
+  <Option type="int" value="0" name="bins"/>
+  <Option type="QString" value="v" name="box_orientation"/>
+  <Option type="bool" value="false" name="box_outliers"/>
+  <Option type="bool" value="false" name="box_stat"/>
+  <Option type="QString" value="Greys" name="color_scale"/>
+  <Option type="bool" value="false" name="color_scale_data_defined_in_check"/>
+  <Option type="bool" value="false" name="color_scale_data_defined_in_invert_check"/>
+  <Option type="QString" value="fill" name="cont_type"/>
+  <Option type="QString" value="Fill" name="contour_type_combo"/>
+  <Option type="bool" value="false" name="cumulative"/>
+  <Option type="List" name="custom">
+   <Option type="QString" value="CASE WHEN &quot;classe&quot; =  'collectivite' &#xa;THEN&#xa;concat('Terres des collectivités ', concat(' ', to_int(&#xa;aggregate( &#xa; layer:='atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47',&#xa; aggregate := 'max',&#xa; expression := &quot;superficie_ha&quot;&#xa; ,&#xa; filter := replace(&quot;nom_ok&quot;,'_', ' ')  =  @atlas_pagename and  &quot;brule&quot; = 'non'  and  &quot;theme&quot; = 'foncier' and  &quot;classe&quot;  = 'collectivite' &#xa;)&#xa;), '  ha'))&#xa;WHEN &quot;classe&quot; = 'non_renseigne' &#xa;THEN&#xa;concat('Non renseigné ', concat(' ', to_int(&#xa;aggregate( &#xa; layer:='atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47',&#xa; aggregate := 'max',&#xa; expression := &quot;superficie_ha&quot;&#xa; ,&#xa; filter := replace(&quot;nom_ok&quot;,'_', ' ')  =  @atlas_pagename and  &quot;brule&quot; = 'non'  and  &quot;theme&quot; = 'foncier' and  &quot;classe&quot;  = 'non_renseigne' &#xa;)&#xa;), '  ha'))&#xa;WHEN &quot;classe&quot; = 'prive' &#xa;THEN&#xa;concat('Terres privées ', concat(' ', to_int(&#xa;aggregate( &#xa; layer:='atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47',&#xa; aggregate := 'max',&#xa; expression := &quot;superficie_ha&quot;&#xa; ,&#xa; filter := replace(&quot;nom_ok&quot;,'_', ' ')  =  @atlas_pagename and  &quot;brule&quot; = 'non'  and  &quot;theme&quot; = 'foncier' and  &quot;classe&quot;  = 'prive' &#xa;)&#xa;), '  ha'))&#xa;WHEN &quot;classe&quot; = 'Terre coutumiere' &#xa;THEN &#xa;concat('Terres coutumières ', concat(' ', to_int(&#xa;aggregate( &#xa; layer:='atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47',&#xa; aggregate := 'max',&#xa; expression := &quot;superficie_ha&quot;&#xa; ,&#xa; filter := replace(&quot;nom_ok&quot;,'_', ' ')  =  @atlas_pagename and  &quot;brule&quot; = 'non'  and  &quot;theme&quot; = 'foncier' and  &quot;classe&quot;  = 'Terre coutumiere' &#xa;)&#xa;), '  ha'))&#xa;END&#xa;"/>
+  </Option>
+  <Option type="QString" value="auto" name="hover_label_position"/>
+  <Option type="invalid" name="hover_label_text"/>
+  <Option type="QString" value="all" name="hover_text"/>
+  <Option type="QString" value="#993366" name="in_color"/>
+  <Option type="bool" value="false" name="invert_color_scale"/>
+  <Option type="QString" value="increasing" name="invert_hist"/>
+  <Option type="bool" value="false" name="layout_filter_by_atlas"/>
+  <Option type="bool" value="false" name="layout_filter_by_map"/>
+  <Option type="QString" value="Solid Line" name="line_combo"/>
+  <Option type="QString" value="solid" name="line_dash"/>
+  <Option type="QString" value="markers" name="marker"/>
+  <Option type="double" value="10" name="marker_size"/>
+  <Option type="int" value="0" name="marker_symbol"/>
+  <Option type="QString" value="Points" name="marker_type_combo"/>
+  <Option type="double" value="0" name="marker_width"/>
+  <Option type="QString" value="" name="name"/>
+  <Option type="QString" value="" name="normalization"/>
+  <Option type="double" value="1" name="opacity"/>
+  <Option type="QString" value="#ffffff" name="out_color"/>
+  <Option type="QString" value="" name="point_combo"/>
+  <Option type="bool" value="false" name="selected_features_only"/>
+  <Option type="bool" value="false" name="show_colorscale_legend"/>
+  <Option type="bool" value="false" name="show_lines"/>
+  <Option type="bool" value="false" name="show_lines_check"/>
+  <Option type="bool" value="false" name="show_mean_line"/>
+  <Option type="bool" value="false" name="violin_box"/>
+  <Option type="QString" value="both" name="violin_side"/>
+  <Option type="bool" value="false" name="visible_features_only"/>
+  <Option type="QString" value="CASE WHEN &quot;classe&quot; =  'collectivite' &#xa;THEN&#xa;concat('Terres des collectivités ', concat(' ', to_int(&#xa;aggregate( &#xa; layer:='atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47',&#xa; aggregate := 'max',&#xa; expression := &quot;superficie_ha&quot;&#xa; ,&#xa; filter := replace(&quot;nom_ok&quot;,'_', ' ')  =  @atlas_pagename and  &quot;brule&quot; = 'non'  and  &quot;theme&quot; = 'foncier' and  &quot;classe&quot;  = 'collectivite' &#xa;)&#xa;), '  ha'))&#xa;WHEN &quot;classe&quot; = 'non_renseigne' &#xa;THEN&#xa;concat('Non renseigné ', concat(' ', to_int(&#xa;aggregate( &#xa; layer:='atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47',&#xa; aggregate := 'max',&#xa; expression := &quot;superficie_ha&quot;&#xa; ,&#xa; filter := replace(&quot;nom_ok&quot;,'_', ' ')  =  @atlas_pagename and  &quot;brule&quot; = 'non'  and  &quot;theme&quot; = 'foncier' and  &quot;classe&quot;  = 'non_renseigne' &#xa;)&#xa;), '  ha'))&#xa;WHEN &quot;classe&quot; = 'prive' &#xa;THEN&#xa;concat('Terres privées ', concat(' ', to_int(&#xa;aggregate( &#xa; layer:='atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47',&#xa; aggregate := 'max',&#xa; expression := &quot;superficie_ha&quot;&#xa; ,&#xa; filter := replace(&quot;nom_ok&quot;,'_', ' ')  =  @atlas_pagename and  &quot;brule&quot; = 'non'  and  &quot;theme&quot; = 'foncier' and  &quot;classe&quot;  = 'prive' &#xa;)&#xa;), '  ha'))&#xa;WHEN &quot;classe&quot; = 'Terre coutumiere' &#xa;THEN &#xa;concat('Terres coutumières ', concat(' ', to_int(&#xa;aggregate( &#xa; layer:='atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47',&#xa; aggregate := 'max',&#xa; expression := &quot;superficie_ha&quot;&#xa; ,&#xa; filter := replace(&quot;nom_ok&quot;,'_', ' ')  =  @atlas_pagename and  &quot;brule&quot; = 'non'  and  &quot;theme&quot; = 'foncier' and  &quot;classe&quot;  = 'Terre coutumiere' &#xa;)&#xa;), '  ha'))&#xa;END&#xa;" name="x_name"/>
+  <Option type="QString" value="superficie_ha" name="y_name"/>
+  <Option type="QString" value="" name="z_name"/>
+ </Option>
+ <Option type="QString" value="bar" name="plot_type"/>
+ <Option type="QString" value="atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47" name="source_layer_id"/>
+</Option>

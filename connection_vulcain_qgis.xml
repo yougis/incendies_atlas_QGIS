@@ -1,0 +1,4 @@
+<!DOCTYPE connections>
+<qgsMssqlConnections version="1.0">
+    <mssql host="geoportail.oeil.nc,1435" service="" saveUsername="true" port="1435" username="hroussaffa" sslmode="1" savePassword="true" name="vulcain" estimatedMetadata="true" database="ALERTE_INCENDIE_v2" password="mcot"/>
+</qgsMssqlConnections>
