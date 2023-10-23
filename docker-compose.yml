@@ -6,7 +6,6 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix 
       - /media/commun/Commun/Informatique/SIG/Application/QGIS:/root/QGIS
-      - /home/hugo/projets:/root/projects
       - /media/archive:/root/archive 
       - /media/commun:/root/commun
       - config:/root/.qgis/
