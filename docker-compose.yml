@@ -1,0 +1,30 @@
+version: '3.3'
+services:
+  qgis:
+    image: qgis/qgis:latest
+    container_name : qgis-dev
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix 
+      - /media/commun/Commun/Informatique/SIG/Application/QGIS:/root/QGIS
+      - /home/hugo/projets:/root/projects
+      - /media/archive:/root/archive 
+      - /media/commun:/root/commun
+      - config:/root/.qgis/
+      - projects:/root/.qgis/projects/
+      - styles:/root/.qgis/styles/
+      - plugins:/root/.qgis/python/plugins/
+      - type: bind
+        source: ./fonts
+        target: /root/fonts
+      - type: bind
+        source: ./resources
+        target: /root/resources
+    environment:
+      - DISPLAY=unix$DISPLAY
+      - ATLAS_YEAR=2020
+
+volumes:
+  config:
+  projects:
+  styles:
+  plugins:
