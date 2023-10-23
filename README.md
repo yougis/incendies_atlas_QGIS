@@ -3,9 +3,31 @@ Le projet de production de fiche communale est réalisé à partir de QGIS et de
 
 # Guide de démarage
 
+## Docker
+Un fichier compose permet de déployer facillement une instance de QGIS.
+
+
+Sous linux, pour démarrer l'application qgis utilisez cette commande 
+
+```
+xhost +local:docker 
+docker exec -itd qgis-dev qgis 
+```
+ou créer un fichier .sh et un lanceur (remplacer mdpsudo avec le mot de passe sudo)
+
+```
+#!/bin/bash
+echo [mdpsudo] | sudo -S xhost +local:docker 
+sudo -S docker exec -itd qgis-dev qgis 
+``` 
+
+## QGIS project
+
 Le projet qgs contient la mise en page, les styles, les accès aux données (localisées en base de donnée) et les parametres pour faire fonctionner l'atlas.
+le fichier de projet contient actuelement les accès à la base de donnée de hugo.  [TODO] : rendre les accès propre à l'application. 
 
 ## Pré-requis 
+
 Pour fonctionner Qgis doit avoir le plugin DataPlotly d'installé (sinon QGIS supprimera purement et simplement les widgets plotly du layout), des fonts et des icons.
 
 
@@ -38,6 +60,7 @@ cp /root/resources/* /usr/share/qgis/svg/oeil_atlas_communal/
 
 
 # Générer un atlas de fiches communales
+- Démarrer QGIS
 - Ouvrir le projet
 - Ouvrir le layout "fiche_commune_incendie"
 - Lancer la génération de l'atlas en mode Image et en JPG en 400 dpi avec antialisasing (permet d'avoir des fiches propres de tailles relativement réduites 1 à 2 mo).
